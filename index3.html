@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/gif" href="assets/animated_favicon.gif">
+    <title>ToDoListRelax</title>
+    <!-- [if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif] -->
+</head>
+
+<body>
+    <header class="header">
+        <h1>ToDoList</h1>
+        <nav class="links"> <a href="index.html" class="nav__link">Дом</a> <a href="index2.html" class="nav__link">Дела</a> <a href="index3.html" class="nav__link">Досуг</a> </nav>
+    </header>
+    <div class="todo__main">
+        <div id="todo-id" class="todo">
+            <h1>Список моих дел <i class="fas fa-pencil-alt"></i></h1>
+            <p class="todo__subtitle">Досуг</p>
+            <input type="text" placeholder="Введите заметку">
+            <button id="responseDos" class="responseDos">Записать</button>
+            <div id="buttons" class="buttons-menu">
+                <button class="buttons save-relax">Сохранить</button>
+                <button class="buttons clear-relax">Очистить</button>
+                <button class="buttons showTips" onclick="toggleClassShowTips()">Справка</button>
+            </div>
+            <ul class="todos" id="todos-id">
+                <li class="list-text">
+                    <p>Написать первое дело</p><span class="todo-delete"><span class="redAndBold">!</span><i class="fas fa-trash-alt"></i></span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="overlay" id="overlay-id">
+        <ul class="tips">
+           <li>Что бы закрыть справку нажмите крестик<span class="closeTips" onclick="removeClassShowTips()">X</span></li>
+            <li>Записывай свои заметки в свой "Список дел"</li>
+            <li>Нажми "сохранить" чтобы не потерять прогресс</li>
+            <li>Нажми "очистить" чтобы ПОЛНОСТЬЮ очистить весь свой список дел</li>
+            <li>Нажми "инструкция" чтобы убрать эту инструкию</li>
+            <li>Нажмите на клавиатуре "ENTER", чтоб добавить написанное дело</li>
+            <li>Нажми на "!" чтобы пометить это дело важным</li>
+            <li>Нельзя вводить слово БОЛЬШЕ 29 символов</li>
+        </ul>
+    </div>
+    <script>
+        function toggleClassShowTips() {
+            document.getElementById('overlay-id').classList.toggle('active')
+        }
+        function removeClassShowTips(){
+            document.getElementById('overlay-id').classList.remove('active')
+        }
+    </script>
+    <script src="app3.js"></script>
+</body>
+
+</html>
